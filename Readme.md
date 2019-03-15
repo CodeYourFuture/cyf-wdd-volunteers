@@ -59,23 +59,27 @@ Link to board if you have one
 | Find by Name       |
 |Find by Teach or Run Organisation|
 |Find by currently volunteering or not|  
-### <a name="stories"></a>User Stories :
-### <a name="howto"></a>Your local machine environment :
-### <a name="tutorials"></a>Useful tutorials :
+
 ### <a name="useful"></a> Useful Information and Links:
-**Github codebase:**
-https://github.com/CodeYourFuture/cyf-forms/tree/application-form
-**Volunteer form:**
-https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html
-**Summary of all ideas:**
-https://docs.google.com/document/d/143wMuPheMY5mXdqd0_0InR7P3V5JCV-HqhZLdz66ChM/edit?usp=sharing
-**Some detailed documents:**
-*Activity Tracker:* https://docs.google.com/document/d/1mDe2JpDCKzH3QSaLJHutfXdM3WilKNFm7OODvDKNPpQ/edit
-*Volunteers "CRM":* https://docs.google.com/document/d/1y0zZedSIFZI7X9Efw53_9Gg9zmpl_dTNxNXFOmTK0jU/edit?usp=sharing
-**Students application process**
+**Github codebase:**  
+https://github.com/CodeYourFuture/cyf-forms/tree/application-form  
+**Volunteer form:**  
+https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html  
+**Summary of all ideas:**  
+https://docs.google.com/document/d/143wMuPheMY5mXdqd0_0InR7P3V5JCV-HqhZLdz66ChM/edit?usp=sharing  
+**Some detailed documents:**  
+*Activity Tracker:* https://docs.google.com/document/d/1mDe2JpDCKzH3QSaLJHutfXdM3WilKNFm7OODvDKNPpQ/edit  
+*Volunteers "CRM":* https://docs.google.com/document/d/1y0zZedSIFZI7X9Efw53_9Gg9zmpl_dTNxNXFOmTK0jU/edit?usp=sharing  
+**Students application process**  
 *Applicants Companion:*
-https://codeyourfuture.io/students#requirements  
+https://codeyourfuture.io/students#requirements    
 *Application form for volunteers*
+<<<<<<< Updated upstream
 https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html
 - https://codeyourfuture.io/apply/mentor
 - https://codeyourfuture.io/apply/volunteer
+=======
+https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html  
+- https://codeyourfuture.io/apply/mentor  
+- https://codeyourfuture.io/apply/volunteer  
+>>>>>>> Stashed changes
