@@ -68,18 +68,14 @@ https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html
 **Summary of all ideas:**  
 https://docs.google.com/document/d/143wMuPheMY5mXdqd0_0InR7P3V5JCV-HqhZLdz66ChM/edit?usp=sharing  
 **Some detailed documents:**  
-*Activity Tracker:* https://docs.google.com/document/d/1mDe2JpDCKzH3QSaLJHutfXdM3WilKNFm7OODvDKNPpQ/edit  
-*Volunteers "CRM":* https://docs.google.com/document/d/1y0zZedSIFZI7X9Efw53_9Gg9zmpl_dTNxNXFOmTK0jU/edit?usp=sharing  
+*Activity Tracker:*  
+https://docs.google.com/document/d/1mDe2JpDCKzH3QSaLJHutfXdM3WilKNFm7OODvDKNPpQ/edit  
+*Volunteers "CRM":*   
+https://docs.google.com/document/d/1y0zZedSIFZI7X9Efw53_9Gg9zmpl_dTNxNXFOmTK0jU/edit?usp=sharing  
 **Students application process**  
-*Applicants Companion:*
+*Applicants Companion:*  
 https://codeyourfuture.io/students#requirements    
-*Application form for volunteers*
-<<<<<<< Updated upstream
-https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html
-- https://codeyourfuture.io/apply/mentor
-- https://codeyourfuture.io/apply/volunteer
-=======
+*Application form for volunteers*  
 https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html  
 - https://codeyourfuture.io/apply/mentor  
-- https://codeyourfuture.io/apply/volunteer  
->>>>>>> Stashed changes
+- https://codeyourfuture.io/apply/volunteer   
