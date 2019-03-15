@@ -1,0 +1,39 @@
+- AWS in API
+- AWS in rds
+
+
+1. Decide how the database is going- AWS in API
+- AWS in rds
+
+
+1. Decide how the database is going to be set up. 
+2. What kind of API - end points?
+3. MVP - 1 getting the DB ready for any type of request that get later on. 
+	end point1 - volunteer basic info 
+	2 tables: 
+		volunteer with info
+		volunteer with skills
+
+
+clone repository https://github.com/womendrivendev/expedia-march-2019/blob/master/projects/TEMPLATE.md
+
+copy paste - template to a new file my-project
+fill in the different fields
+
+
+pull requests against womendirvendev  to be set up. 
+2. What kind of API - end points?
+3. MVP - 1 getting the DB ready for any type of request that get later on. 
+	end point1 - volunteer basic info 
+	2 tables: 
+		volunteer with info
+		volunteer with skills
+
+
+clone repository https://github.com/womendrivendev/expedia-march-2019/blob/master/projects/TEMPLATE.md
+
+copy paste - template to a new file my-project
+fill in the different fields
+
+
+pull requests against womendirvendev 

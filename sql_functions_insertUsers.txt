@@ -1,0 +1,105 @@
+import json
+import psycopg2
+import pandas as pd
+# import db_actions
+
+def lambda_handler(event, context):
+    # TODO implement
+    print(event)
+    
+    conn = psycopg2.connect(host = "cyf-wdd-volunteers.cispm8rjoafp.eu-west-2.rds.amazonaws.com",
+    database = "cyf-wdd-volunteers", user="cyf_volunteers", password="kreP5aJ6UvnJhMH")
+    print(conn)
+    
+    # volunteer_data = event.get('body').get('volunteer')
+    
+    # insert_new_volunteer(volunteer_data)
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps('New volunteer recorded!')
+    }
+
+
+###################### insert_new_volunteer function
+
+import psycopg2
+import uuid
+
+def insert_new_volunteer(volunteer_data):
+
+    name = volunteer_data.get('name')
+    surname = volunteer_data.get('surname')
+    cyf_city = volunteer_data.get('cyf-city')
+    email = volunteer_data.get('email')
+    phone_number: volunteer_data.get('contact-number')
+    experience = volunteer_data.get('general-experience')
+    weekend_availability = volunteer_data.get('weekend-availability')
+    current_volunteering = volunteer_data.get('currently-volunteering')
+    technical_skills =  volunteer_data.get('technical_skills')
+    userID  = uuid1()
+    
+    conn = psycopg2.connect(host = "cyf-wdd-volunteers.cispm8rjoafp.eu-west-2.rds.amazonaws.com",
+    database = "cyf-wdd-volunteers", user="cyf_volunteers", password="kreP5aJ6UvnJhMH")
+    
+    query_userID = " SELECT USER_ID" \
+     	" FROM cyf-wdd-volunteers.volunteer_info"
+    
+    session = conn.cursor()
+    
+    session.execute(query_userID)
+    
+    db_users = pd.read_sql_query(query_userID, conn)
+    
+    user_exist = check_user_exist(db_users, userID)
+    
+    if user_exist==TRUE:
+    	userID = uuid1()
+	
+	
+	# insert data: 
+	
+	sql_info = "INSERT into cyf-wdd-volunteers.volunteer_info" \
+	"VALUES('%s', '%s', '%s', '%s', '%s', %d, '%s', %d, %d)" %\
+	(userID, name, surname, cyf_city, email, phone_number, experience, weekend_availability, current_volunteer)
+	
+	
+	session.execute(sql_info)
+	session.commit()
+	
+	
+	data = pd.DataFrame(technical_skills, columns = labels)
+	data['user_id'] = userID
+	
+	cols = ['user_id','skillType','level']
+	
+	data = data[cols]
+	
+	sql_tech = "INSERT into cyf-wdd-volunteers.volunteer_technical_skills" \
+	"VALUES('%s', '%s', %d)"
+	
+	session.executemany(sql_tech,data)
+	session.commit()
+
+
+    conn.close()
+    
+
+    
+def check_user_exist(db_users, user_id):
+	"""
+		Checks if the user_id already exist:
+	"""
+	check = db_users[db_users['USER_ID'].str.contains(user_id)] 
+	
+	if found.count()==0: 
+		return FALSE
+	else found.count()>0:
+		return TRUE
+	
+
+
+   
+    
+    
+    
