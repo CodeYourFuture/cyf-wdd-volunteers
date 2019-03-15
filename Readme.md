@@ -1,55 +1,109 @@
 # </a>CYF - volunteers manager!!!
+
 [Introduction](#intro) |
 [Scope](#scope)|
 [Trello Board](#trello) |
 [Stack](#stack) |
-[Possible Query select](#params) |
 [Tech Notes](#technotes)|
-[User Stories](#stories) |  
-[Your local machine environment](#howto)|
-[Useful tutorials](#tutorials)|
-[Q&A](#q&a) <br>
+[Possible Query params](#params) |
+[Useful links](#useful) <br>
+
 ### <a name="intro"></a>Introduction :
+
 Website : [Code your future](https://codeyourfuture.io/)
-The CYF charity provides the opportunity for people at a disadvantage to learn to code, during an 8 month programme with a weekly Sunday meetup.
-Recently, new aspects have been introduced to the programme; the homework clubs (Tuesday and Thursday) and one-to-one mentoring scheme.
-A new organogram was designed for volunteers to be involved in outreach, education and development.
-CYF has established a setup in multiple locations: London, Manchester, Glasgow, Rome and Bogota. Whilst CYF are experiencing rapid expansion, there is no uniformed approach to their processes.
-The website is built in React and JavaScript on AWS Lambda, hosted on GitHub. All other data lives on Google Drive and Gmail in sheets/docs/presentations.
+The charity provides the opportunity for people at a disadvantage to learn to code during an 8 month programme with a weekly Sunday meetup.
+Newly aspects introduced to the programme are the homework clubs (Tuesday and Thursday) and one-to-one mentoring scheme. Whilst CYF are experiencing rapid expansion, there is no uniformed approach to processes. A new organogram was designed for volunteers to be involved in outreach, education development.
+
+_The website website is built in React and JavaScript on AWS Lambda, hosted on GitHub. All other data lives on Google Drive and Gmail in sheets/docs/presentations._
+
 ### <a name="scope"></a> Scope :
+MVP version 1 :
+Post all data from front-end to backend
+
+MVP version 2:
+TBD
+
 ### <a name="trello"></a>Trello Board :
-Link to board if you have one
+
+[Link](https://trello.com/b/fA4sf5J0/cyf-volunteer-tracking)
+
+
 ### <a name="stack"></a>Stack :
+
 |Technology| Version/Docs|
 |---|---|
-|Java|8|
-|Postgres| [Docs Link](https://www.postgresql.org/)|
+|Java|version 8|
+|Postgress| [Docs Link](https://www.postgresql.org/)|
 |Lambda|[Docs Link](https://docs.aws.amazon.com/lambda/index.html#lang/en_us)|
-|Docker|[Docs Link](https://www.docker.com/)|
 |AWS - EC2|[Docs Link](https://docs.aws.amazon.com/ec2/index.html#lang/en_us)|
 |React|[Docs Link](https://reactjs.org/)|
-|Springboot|[Docs Link](https://spring.io/)|
 |Testing|:speak_no_evil:|
+
+
 ### <a name="technotes"></a>Tech Notes :
 > Volunteer information db table
 
 |Data|Type|
-|:---:|:---:|
-|Name|String|
-|Surname|String|
-|City|String|
-|Email|String|
-|Contact number|Int|
+|---|---|
+|id | auto|
+|name | String|
+|surname  | String|
+|city | String|
+|email  | String|
+|contact-number | Int|
+|general-experience | string|
+|weekend-availability | bool|
+|currently-volunteering | bool|
+
 > Volunteer skills information db table
 
 | Data    | Type     |
-|:-------------:|:-------------:|
-| Teaching       | Bool       |
-|Running Organisation| Bool|
-|Language and Level| Enum|
-|General experience |String|
-|Weekend Availability (Teachers can only help on weekends. Non-technical volunteers can help any time)|Bool|
-|Currently volunteering|Bool|
+| ------------- | ------------- |
+|id | auto|
+|user-id| auto|
+|volunteer-name|  string|
+|language-skill| Enum|
+|level| int|
+
+```
+Method    endpoint
+POST      /volunteers
+
+Table 1 volunteers-info
+|id | name |  surname | city  | email | contact | general experience  | weekend availability  | currently volunteering  |
+
+Table 2 volunteers-technical-skill
+
+id  | user id | volunteer name | Skill | Level |
+|Name A | Java  | 4 |
+```
+### <a name="front-end"/></a>Post request schema  :
+*for front-end :*
+
+```
+{volunteer: {
+        name: string,
+        surname: string,
+        cyf-city: string,
+        email: string,
+        contact-number: Int || null,
+        general-experience: string,
+        weekend-availability: bool,
+        currently-volunteering: bool,
+        technical-skills: {[
+                  {skill-type: emun,
+                  level: int},
+                  {skill-type: enum,
+                  level: int},
+                  {skill-type: enum,
+                  level: int},
+                  {skill-type: enum,
+                  level: int},
+                  ]}
+        }
+}
+```
+
 ### <a name="params"/></a>Possible query params  :
 | `query params` or `endpoints` TBD  |
 |:---|
