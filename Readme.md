@@ -6,6 +6,9 @@
 [Tech Notes](#technotes)|
 [Possible Query params](#params) |
 [Useful links](#useful) <br>
+[Useful links](#useful)
+[Completed Features](#completed)<br>
+
 ### <a name="intro"></a>Introduction :
 Website : [Code your future](https://codeyourfuture.io/)
 The charity provides the opportunity for people at a disadvantage to learn to code during an 8 month programme with a weekly Sunday meetup.
@@ -118,6 +121,18 @@ https://codeyourfuture.io/students#requirements
 https://s3.eu-west-2.amazonaws.com/cyf-test-application-form/index.html
 - https://codeyourfuture.io/apply/mentor
 - https://codeyourfuture.io/apply/volunteer
+
+### <a name="completed"></a> Completed Features in WDD hackathon
+**Database** 
+Using DB credentials (jonny@codeyourfuture.io), we created the DB schema (refer volunteer.sql file) and hosted in on AWS RDS.
+Here's the link of the running RDS https://eu-west-2.console.aws.amazon.com/rds/home?region=eu-west-2#database:id=cyf-wdd-volunteers;is-cluster=false
+**Backend**
+The backend is hosted on AWS lambda and is written in python and the code sits in "backend_wdd_hackathon": branch https://github.com/CodeYourFuture/cyf-wdd-volunteers/tree/backend_wdd_hackathon
+https://pz5anvw8xd.execute-api.eu-west-2.amazonaws.com/beta/volunteers
+
+
+
+
 
 
 Setup/Deployment (to be completed):
