@@ -1,5 +1,3 @@
-CREATE DATABASE volunteer_tracking;
-
 CREATE TABLE volunteer_info (
 user_id char(36) CONSTRAINT user_id_pk PRIMARY KEY,
 first_name varchar(255) NOT NULL,
