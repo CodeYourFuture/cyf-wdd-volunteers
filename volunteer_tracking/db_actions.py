@@ -2,6 +2,9 @@ import psycopg2
 import uuid
 import boto3
 
+USERNAME = 'seykuyinu@gmail.com'
+PASSWORD = 'CYFvolunteer19'
+
 
 def insert_new_volunteer(volunteer_data):
     name = volunteer_data.get('name')
@@ -62,6 +65,7 @@ def check_user_exist(db_users, user_id):
     elif check.count()> 0:
         return True
 
+
 def get_parameter_value(param_name, decryption=False):
     param_store_client = boto3.client('ssm')
     response = param_store_client.get_parameter(
@@ -72,3 +76,19 @@ def get_parameter_value(param_name, decryption=False):
     param_value = response['Parameter']['Value']
 
     return param_value
+
+
+def fetch_volunteers(volunteer_filter):
+    # Untested function
+    conn = psycopg2.connect(host="cyf-wdd-volunteers.cispm8rjoafp.eu-west-2.rds.amazonaws.com",
+                            database="cyf_volunteers", port="8080", user=USERNAME, password=PASSWORD)
+
+    cursor = conn.cursor()
+    # query = "SELECT * FROM volunteer_info"
+    sql_filter = ' AND '.join(['{0} LIKE \'%{1}%\''.format(k, v) for k, v in volunteer_filter.items()])
+    query = """
+        SELECT * FROM volunteer_info
+        WHERE {};
+    """.format(sql_filter)
+    cursor.execute(query)
+    return cursor.fetchall()
