@@ -1,12 +1,12 @@
 import json
-
-from flask import Flask, request
+from flask import Flask, request, Response
 app = Flask(__name__)
 
 from volunteer_tracking.db_actions import insert_new_volunteer, fetch_volunteers
 
 # @TODO test this method
 
+<<<<<<< HEAD
 
 @app.route("/create_volunteer/", methods=['GET', 'POST'])
 def create_volunteer(event):
@@ -15,12 +15,6 @@ def create_volunteer(event):
         volunteer_data = json.loads(body).get('volunteer')
         insert_new_volunteer(volunteer_data)
 
-        return {
-            'statusCode': 200,
-            'body': json.dumps('New volunteer recorded!')
-        }
+        return Response("New volunteer recorded!", status=200)
     if request.method == 'GET':
-        return {
-            'statusCode': 200,
-            'body': json.dumps(fetch_volunteers(request.args))
-        }
+        return Response(json.dumps(fetch_volunteers(request.args)), status=200)
