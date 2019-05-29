@@ -1,5 +1,6 @@
 import psycopg2
 import uuid
+import boto3
 
 
 def insert_new_volunteer(volunteer_data):
@@ -14,8 +15,8 @@ def insert_new_volunteer(volunteer_data):
     technical_skills = volunteer_data.get('technicalSkills')
     userID = uuid.uuid1()
 
-    db_user = "something"
-    db_password = "something"
+    db_user = get_parameter_value('volunteer_db_username')
+    db_password = get_parameter_value('volunteer_db_pass', decryption=True)
 
     conn = psycopg2.connect(host="cyf-wdd-volunteers.cispm8rjoafp.eu-west-2.rds.amazonaws.com",
                             database="cyf_volunteers",port="8080",user=db_user, password=db_password)
@@ -60,3 +61,14 @@ def check_user_exist(db_users, user_id):
         return False
     elif check.count()> 0:
         return True
+
+def get_parameter_value(param_name, decryption=False):
+    param_store_client = boto3.client('ssm')
+    response = param_store_client.get_parameter(
+        Name=param_name,
+        WithDecryption=decryption
+    )
+
+    param_value = response['Parameter']['Value']
+
+    return param_value

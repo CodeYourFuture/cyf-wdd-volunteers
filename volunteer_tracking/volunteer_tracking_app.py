@@ -1,19 +1,15 @@
 import json
 
-from flask import Flask
+from flask import Flask, request, Response
 app = Flask(__name__)
 
 from volunteer_tracking.db_actions import insert_new_volunteer
 
 
-@app.route("/create_volunteer/")
-def create_volunteer(event):
-    print(event)
-    body = event['body']
-    volunteer_data = json.loads(body).get('volunteer')
+@app.route("/create_volunteer/", methods=["POST"])
+def create_volunteer():
+    volunteer_data = json.loads(request.data)
     insert_new_volunteer(volunteer_data)
+    resp = Response("New volunteer recorded!", status=200)
 
-    return {
-        'statusCode': 200,
-        'body': json.dumps('New volunteer recorded!')
-    }
+    return resp
