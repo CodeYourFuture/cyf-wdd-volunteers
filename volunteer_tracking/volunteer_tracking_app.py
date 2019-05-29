@@ -6,7 +6,6 @@ from volunteer_tracking.db_actions import insert_new_volunteer, fetch_volunteers
 
 # @TODO test this method
 
-<<<<<<< HEAD
 
 @app.route("/create_volunteer/", methods=['GET', 'POST'])
 def create_volunteer(event):
