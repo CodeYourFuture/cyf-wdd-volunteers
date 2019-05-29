@@ -1,7 +1,7 @@
 CREATE DATABASE volunteer_tracking;
 
 CREATE TABLE volunteer_info (
-user_id char(36) CONSTRAINT iser_id_pk PRIMARY KEY,
+user_id char(36) CONSTRAINT user_id_pk PRIMARY KEY,
 first_name varchar(255) NOT NULL,
 last_name varchar(255) DEFAULT NULL,
 cyf_city varchar(255) NOT NULL,
@@ -9,8 +9,8 @@ email varchar(255) NOT NULL,
 phone_number integer DEFAULT NULL,
 experience varchar(255) DEFAULT NULL,
 weekend_availability BOOLEAN NOT NULL DEFAULT FALSE,
-current_volunteer BOOLEAN NOT NULL DEFAULT FALSE,
-PRIMARY KEY (user_id));
+current_volunteer BOOLEAN NOT NULL DEFAULT FALSE
+);
 
 CREATE TABLE volunteer_technical_skill (
 user_id char(36) NOT NULL,
